@@ -1,0 +1,17 @@
+.location-preview {
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter .3s ease-in-out;
+    h3 {
+        text-align: center;
+    }
+    &:hover {
+        filter: brightness(120%)
+    }
+}

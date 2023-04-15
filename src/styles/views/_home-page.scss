@@ -1,0 +1,16 @@
+.home-page {
+    .call-to-action {
+        cursor: pointer;
+        border: none;
+        background-color: #f3603f;
+        border-radius: 2rem;
+        padding: 1rem;
+        // color: $clr1;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: filter .3s ease-in-out;
+        &:hover {
+            filter: brightness(120%);
+        }
+    }
+}

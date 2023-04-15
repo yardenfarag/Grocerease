@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: $clr6;
+}
+
+body {
+  font-family: Arial;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: $clr1;
+  min-height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+  color: $clr6;
+  transition: color 0.3s ease-in-out;
+  &:hover {
+    color: $call-to-action;
+}
+}
+button {
+  color: $clr6;
+}
