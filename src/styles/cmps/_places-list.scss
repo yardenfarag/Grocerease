@@ -1,0 +1,44 @@
+.add-item {
+    gap: 5px;
+    padding: 4px;
+    .inputs {
+        gap: 4px;
+        .title-quantity {
+            gap:4px;
+        }
+    }
+
+    input {
+        border-radius: 6px;
+        border: 0;
+        padding: 4px;
+    }
+
+    button {
+        cursor: pointer;
+        width: 50%;
+        height: 100%;
+        border: 0;
+        background-color: $clr1;
+        border-radius: 12px;
+        font-size: 3rem;
+        color: $clr2;
+        transition: filter .2s ease-in-out;
+
+        &:hover {
+            filter: brightness(80%);
+        }
+    }
+
+    .new-item-title {
+        width: 96%;
+    }
+
+    .new-item-quantity {
+        width: 26%;
+    }
+
+    .new-item-date {
+        width: 67%;
+    }
+}

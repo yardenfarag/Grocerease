@@ -8,11 +8,19 @@ $call-to-action: #166aea;
 // $clr5: rgb(255 251 240);
 
 // carrot
-$clr1: #ffc164;
+// $clr1: #ffc164;
+// $clr3: #ff9a00;
+// $clr2: #ff7f00;
+// $clr4: #7b9625;
+// $clr6: #196f02;
+// $clr5: #787787;
+
+// darkmode
+$clr1: #2e2e2e;
 $clr3: #ff9a00;
-$clr2: #ff7f00;
+$clr2: #ffffff70;
 $clr4: #7b9625;
-$clr6: #196f02;
+$clr6: rgb(255, 255, 255);
 $clr5: #787787;
 
 // grapes
@@ -22,6 +30,30 @@ $clr5: #787787;
 // $clr5: #97C861;
 // $clr6: #79AE47;
 // $clr4: #8D6E63;
+
+//coffee
+// $clr1: #37251b;
+// $clr2: #d2c1b0;
+// $clr3: #8f755f;
+// $clr5: #80411e;
+// $clr4: #e4bc84;
+// $clr6: #ad6d2f;
+
+//strawberry
+// $clr3: #E32E34;
+// $clr2: #EC4653;
+// $clr5: #FC5A8D;
+// $clr1: #FC9FB1;
+// $clr4: #8CB360;
+// $clr6: #4F6D3A;
+
+//default
+// $clr1: #ffffff;
+// $clr2: #e0dede;
+// $clr3: #b3b3b3;
+// $clr4: #878787;
+// $clr5: #4a4a4a;
+// $clr6: #000000;
 
 // LAYOUT
 $layoutPadding: 40px;

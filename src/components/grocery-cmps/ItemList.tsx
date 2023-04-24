@@ -1,22 +1,29 @@
-import React from 'react'
+import React, { FormEvent, useState } from 'react'
 import { ItemPreview } from './ItemPreview'
+import { Form } from 'react-router-dom'
+import { Item } from '../../models/item'
+import { useSelector } from 'react-redux'
 
-export const ItemList = (props:any) => {
+export const ItemList = (props: any) => {
+    let filterBy: {txt:string} = useSelector((state: any) => state.store.filterBy)
+    const deleteItemHandler = (itemId:string) => {
+        props.onDeleteItem(itemId)
+    }
+    const updateItemHandler = (itemToUpdate: Item) => {
+        props.onUpdateItem(itemToUpdate)
+    }
+    const addItemToShoppingListHandler = (id:string, title:string) => {
+        props.onAddItemToShoppingList(id, title)
+    }
     return (
         <div className="items flex column">
-            {props.items.map((item: any) => {
+            {props.items.filter((item: Item) => filterBy.txt ? item.title.includes(filterBy.txt): true)
+            .map((item: Item) => {
                 return (
-                    <ItemPreview key={item.id} title={item.title} quantity={item.quantity}/>
+                    <ItemPreview onAddItemToShoppingList={addItemToShoppingListHandler} onUpdateItem={updateItemHandler} onDeleteItem={deleteItemHandler} key={item.id} item={item}/>
                 )
             })}
-            <div className='add-item flex between'>
-                <form className="add-item-form flex column">
-                    <input className='new-item-title' type="text" placeholder='New item...' />
-                    <input className='new-item-quantity' type="number" placeholder='Quantity' />
-                    <input className='new-item-date' type="date" placeholder='Expiration' />
-                </form>
-                <button>+</button>
-            </div>
+            
         </div>
     )
 }

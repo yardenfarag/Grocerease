@@ -1,20 +1,30 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { ItemFilter } from './ItemFilter'
 
-export const AppHeader = () => {
+export const AppHeader = (props: any) => {
+    const changeLngHandler = (ev: any) => {
+        props.onChangeLng(ev.target.value)
+    }
     return (
         <header className='app-header'>
             <div className='flex flex-column between items-center'>
                 <div className="logo">
                     <img className='logo-img' src="https://res.cloudinary.com/dfz8mxb4f/image/upload/v1680119258/Group_1_nhbrcc.svg" alt="logo" />
                 </div>
-            <nav>
-                <ul className='clean-list flex'>
-                    <li><Link to="/stock">Stock</Link></li>
+                <ItemFilter />
+                <nav>
+                    <ul className='clean-list flex'>
+                        <select onChange={changeLngHandler}>
+                            <option value="he">Hebrew</option>
+                            <option value="en">English</option>
+                        </select>
+                        <li>⚙️</li>
+                        {/* <li><Link to="/stock">Stock</Link></li>
                     <li><Link to="/">Shopping List</Link></li>
-                    <li><Link to="/">Settings</Link></li>
-                </ul>
-            </nav>
+                    <li><Link to="/">Settings</Link></li> */}
+                    </ul>
+                </nav>
             </div>
         </header>
     )

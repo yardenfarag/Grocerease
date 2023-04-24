@@ -32,3 +32,30 @@ a {
 button {
   color: $clr6;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: $clr4 transparent;
+  }
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    scroll-margin-inline-end: 4px;
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: $clr6;
+    border-radius: 10px;
+    border: 0;
+  }
+
+  .rtl {
+    direction: rtl;
+  }

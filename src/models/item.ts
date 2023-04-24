@@ -1,6 +1,6 @@
 export interface Item {
-    id:string
+    id?:string
     title:string
-    expiry: string
+    expiry?: string
     quantity:number
 }

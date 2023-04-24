@@ -12,10 +12,15 @@
 
 // Views
 @import './views/home-page';
-@import './views/location-details-page';
-@import './views/locations-page';
+@import './views/store-details-page';
+@import './views/stores-page';
 
 // Components
 @import "./cmps/app-header";
-@import "./cmps/location-preview";
+@import "./cmps/store-preview";
+@import "./cmps/item-list";
+@import "./cmps/item-preview";
+@import "./cmps/shopping-list";
+@import "./cmps/places-list";
+@import "./cmps/item-filter"
 

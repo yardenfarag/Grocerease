@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import locationReducer from './location'
+import storeReducer from './store'
 
 const store = configureStore({
-    reducer: {location: locationReducer}
+    reducer: {store: storeReducer}
 })
 
 export default store
