@@ -1,16 +1,21 @@
 .home-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     .call-to-action {
         cursor: pointer;
-        border: none;
+        border: 1px solid $clr4;
         background-color: #f3603f;
+        color: $clr1;
         border-radius: 2rem;
         padding: 1rem;
         // color: $clr1;
         font-weight: bold;
-        font-size: 1.1rem;
+        font-size: 2rem;
         transition: filter .3s ease-in-out;
         &:hover {
-            filter: brightness(120%);
+            filter: brightness(80%);
         }
     }
 }

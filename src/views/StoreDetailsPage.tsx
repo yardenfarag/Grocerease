@@ -8,11 +8,12 @@ import { Item } from '../models/item'
 import { Grocery } from '../models/grocery'
 import { ShoppingList } from '../components/ShoppingList'
 import { ItemFilter } from '../components/ItemFilter'
+import { AppHeader } from '../components/AppHeader'
 
 export const StoreDetailsPage = () => {
   const dispatch = useDispatch()
   const { id } = useParams()
-  
+
   useEffect(() => {
     if (!id) return
     dispatch(storeActions.setCurStore(id))
@@ -27,8 +28,8 @@ export const StoreDetailsPage = () => {
     ev.target[0].value = ''
 
   }
-  
-  const addGroceryToShoppingListHandler = (groceryTitle:string) => {
+
+  const addGroceryToShoppingListHandler = (groceryTitle: string) => {
     dispatch(storeActions.addGroceryToShoopingList(groceryTitle))
   }
 
@@ -42,26 +43,29 @@ export const StoreDetailsPage = () => {
   const updateItemHandler = (itemToUpdate: Item, placeId: string) => {
     dispatch(storeActions.updateItem({ itemToUpdate, placeId }))
   }
-  const deleteGroceryHandler = (groceryId:string) => {
+  const deleteGroceryHandler = (groceryId: string) => {
     dispatch(storeActions.deleteGroceryFromShoppingList(groceryId))
   }
-  const addItemToShoppingListHandler = (id:string, title:string) => {
-    dispatch(storeActions.addItemToShoppingList({id, title}))
-}
+  const addItemToShoppingListHandler = (id: string, title: string) => {
+    dispatch(storeActions.addItemToShoppingList({ id, title }))
+  }
   return (
-    <main>
-      <div className='places-container'>
-        <form onSubmit={addPlaceHandler} className="add-place">
-          <input type="text" placeholder='הוסף מיקום' />
-          <button type='submit'>+</button>
-        </form>
-        {store && store.places.map((place: any) => {
-          return (
-            <PlacesList onAddItemToShoppingList={addItemToShoppingListHandler} onUpdateItem={updateItemHandler} onDeleteItem={deleteItemHandler} onAddItem={addItemHandler} key={place.id} id={place.id} title={place.title} items={place.items} />
-          )
-        })}
-      </div>
+    <div>
+      <AppHeader />
+      <main>
+        <div className='places-container'>
+          <form onSubmit={addPlaceHandler} className="add-place">
+            <input type="text" placeholder='הוסף מיקום' />
+            <button type='submit'>+</button>
+          </form>
+          {store && store.places.map((place: any) => {
+            return (
+              <PlacesList onAddItemToShoppingList={addItemToShoppingListHandler} onUpdateItem={updateItemHandler} onDeleteItem={deleteItemHandler} onAddItem={addItemHandler} key={place.id} id={place.id} title={place.title} items={place.items} />
+            )
+          })}
+        </div>
         <ShoppingList onDeleteGrocery={deleteGroceryHandler} onAddGroceryToShoppingList={addGroceryToShoppingListHandler} shoppingList={store?.shoppingList} />
-    </main>
+      </main>
+    </div>
   )
 }

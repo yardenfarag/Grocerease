@@ -9,10 +9,17 @@ html {
 }
 
 body {
-  font-family: Arial;
-  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: $clr1;
+  // font-family: Arial;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+  // background-color: $clr1;
   min-height: 100vh;
+  direction: rtl;
+  background: linear-gradient(to top, #ff7f00, #fff);
+  // background-image: url('https://media.istockphoto.com/id/1173579665/pt/vetorial/seamless-pattern-supermarket-grocery-store-food-drinks-vegetables-fruits-fish-meat-dairy.jpg?s=612x612&w=0&k=20&c=wWqg-CLtSbAoHsujxSUssdL5RgVi6bqRWeA8vs-jK94=');
+  // background-image: url('https://img.freepik.com/premium-vector/seamless-pattern-with-icons-vegetables-vector-illustration_263366-726.jpg?w=826');
+  // background-image: url('https://images.pexels.com/photos/1415734/pexels-photo-1415734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  // background-image: url('https://img.freepik.com/free-vector/cooking-spice-pattern-black-white-colors_530521-846.jpg?w=1380&t=st=1682450332~exp=1682450932~hmac=41fed79d6c8ce253f024b1329eb27bd97a44582004166a6e4a5f5f3d428ba155');
+  // background-image: url('https://img.freepik.com/free-vector/white-doodle-vegetables-fruits-isolated-blackboard-seamless-pattern_1284-52003.jpg?w=826&t=st=1682450346~exp=1682450946~hmac=4b1c22aff35b40656715507c784aa2e5434b8ed3a88c0598891fd5f0a7ed99a9');
 }
 
 img {
@@ -24,10 +31,6 @@ img {
 a {
   text-decoration: none;
   color: $clr6;
-  transition: color 0.3s ease-in-out;
-  &:hover {
-    color: $call-to-action;
-}
 }
 button {
   color: $clr6;
@@ -56,6 +59,13 @@ button {
     border: 0;
   }
 
-  .rtl {
-    direction: rtl;
-  }
+  // .rtl {
+  //   direction: rtl;
+  // }
+
+  input {
+    border-radius: 8px;
+    border: 0;
+    padding: 4px;
+    border: 1px solid #ff7f00;
+}

@@ -15,10 +15,10 @@ export const AppHeader = (props: any) => {
                 <ItemFilter />
                 <nav>
                     <ul className='clean-list flex'>
-                        <select onChange={changeLngHandler}>
+                        {/* <select onChange={changeLngHandler}>
                             <option value="he">Hebrew</option>
                             <option value="en">English</option>
-                        </select>
+                        </select> */}
                         <li>⚙️</li>
                         {/* <li><Link to="/stock">Stock</Link></li>
                     <li><Link to="/">Shopping List</Link></li>

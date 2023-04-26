@@ -1,17 +1,27 @@
 .store-preview {
     cursor: pointer;
     position: relative;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    border-radius: 6px;
+    width: 230px;
+    height: 230px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: filter .3s ease-in-out;
+    flex-direction: column;
+    transition: scale .2s ease-in-out;
+    border: 1px solid $clr4;
+    div {
+        width: 100px;
+        height: 100px;
+    }
     h3 {
         text-align: center;
+        color: $clr6;
+        font-size: 2rem;
+        text-shadow: 0px 0px 3px black;
     }
     &:hover {
-        filter: brightness(120%)
+        scale: 1.1;
+        filter: brightness(90%)
     }
 }
