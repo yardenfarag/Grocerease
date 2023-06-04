@@ -1,18 +1,25 @@
+.place {
+    background-color: rgba(255,255,255,0.13);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 40px rgba(146, 146, 146, 0.6);
+}
+
 .add-item {
     gap: 5px;
     padding: 4px;
+    position: relative;
+
+    .product-list-modal {
+        position: absolute;
+        top: 80px;
+        z-index: 3;
+    }
     .inputs {
         gap: 4px;
         .title-quantity {
             gap:4px;
         }
     }
-
-    // input {
-    //     border-radius: 6px;
-    //     border: 0;
-    //     padding: 4px;
-    // }
 
     button {
         cursor: pointer;

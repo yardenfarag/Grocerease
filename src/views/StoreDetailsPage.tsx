@@ -9,10 +9,14 @@ import { Grocery } from '../models/grocery'
 import { ShoppingList } from '../components/ShoppingList'
 import { ItemFilter } from '../components/ItemFilter'
 import { AppHeader } from '../components/AppHeader'
+import { RootState } from '../store'
+import { ProductList } from '../components/grocery-cmps/ProductList'
+import { Product } from '../models/product'
 
 export const StoreDetailsPage = () => {
   const dispatch = useDispatch()
   const { id } = useParams()
+  const products: Product[] | null = useSelector((state:RootState) => state.store.products)
 
   useEffect(() => {
     if (!id) return
@@ -49,8 +53,14 @@ export const StoreDetailsPage = () => {
   const addItemToShoppingListHandler = (id: string, title: string) => {
     dispatch(storeActions.addItemToShoppingList({ id, title }))
   }
+  const searchHandler = (searchTerm:string) => {
+    dispatch(storeActions.getProductsByTxt(searchTerm))
+  }
+  // const chooseProductHandler = (title: string, imgUrl: string, barcode: string) => {
+    
+  // }
   return (
-    <div>
+    <div style={{background: `linear-gradient(to bottom right, #fff, ${store?.color})`}}>
       <AppHeader />
       <main>
         <div className='places-container'>
@@ -60,11 +70,12 @@ export const StoreDetailsPage = () => {
           </form>
           {store && store.places.map((place: any) => {
             return (
-              <PlacesList onAddItemToShoppingList={addItemToShoppingListHandler} onUpdateItem={updateItemHandler} onDeleteItem={deleteItemHandler} onAddItem={addItemHandler} key={place.id} id={place.id} title={place.title} items={place.items} />
+              <PlacesList products={products} onSearch={searchHandler} onAddItemToShoppingList={addItemToShoppingListHandler} onUpdateItem={updateItemHandler} onDeleteItem={deleteItemHandler} onAddItem={addItemHandler} key={place.id} id={place.id} title={place.title} items={place.items}/>
             )
           })}
         </div>
-        <ShoppingList onDeleteGrocery={deleteGroceryHandler} onAddGroceryToShoppingList={addGroceryToShoppingListHandler} shoppingList={store?.shoppingList} />
+        {/* <ProductList onChooseProduct={chooseProductHandler} products={products}/> */}
+        {/* <ShoppingList onDeleteGrocery={deleteGroceryHandler} onAddGroceryToShoppingList={addGroceryToShoppingListHandler} shoppingList={store?.shoppingList} color={store.color}/> */}
       </main>
     </div>
   )

@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ItemFilter } from './ItemFilter'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store'
+import { User } from '../models/user'
 
 export const AppHeader = (props: any) => {
+    const user = useSelector<RootState, User | null>(state => state.user.loggedInUser)
     const changeLngHandler = (ev: any) => {
         props.onChangeLng(ev.target.value)
     }

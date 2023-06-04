@@ -31,7 +31,7 @@ export const ShoppingList = (props: any) => {
         setGroceryTitle(ev.target.value)
     }
     return (
-        <div className="shopping-list">
+        <div className="shopping-list" style={{backgroundColor: props.color}} >
             <h1>רשימת קניות</h1>
             <ul className='clean-list flex column'>
                 {props.shoppingList?.map((item: Grocery) => <GroceryItemPreview key={item.id} onDeleteGrocery={deleteGroceryHandler} item={item} />)}

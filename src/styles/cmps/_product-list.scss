@@ -1,0 +1,9 @@
+.product-list {
+    margin-inline-start: -4px;
+    width:220px;
+    padding-inline: 8px;
+    max-height: 20vh;
+    overflow-y: scroll;
+    background-color: $clr1;
+    border-radius: 4px;
+}

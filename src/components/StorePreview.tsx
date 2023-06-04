@@ -6,8 +6,11 @@ export const StorePreview = (props:any) => {
     props.setCurStore(props.id)
   }
   return (
-    <Link onClick={setCurStoreHandler} to={props.id} style={{backgroundColor: props.color}} className="store-preview">
-        <h3>{props.title}</h3>
+    <Link onClick={setCurStoreHandler} to={props.id} className="store-preview">
+      <div style={{backgroundColor: props.color}} className='store-back'></div>
+      <div className="store-front"></div>
+        <h3 className='store-front'>{props.title}</h3>
     </Link>
   )
 }
+

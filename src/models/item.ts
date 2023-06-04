@@ -3,4 +3,6 @@ export interface Item {
     title:string
     expiry?: string
     quantity:number
+    imgUrl?: string
+    barcode: string
 }

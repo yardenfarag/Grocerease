@@ -7,4 +7,5 @@ export interface Store {
     color:string
     places: Place[]
     shoppingList: Grocery[]
+    userIds?: string[]
 }

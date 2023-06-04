@@ -1,16 +1,29 @@
 @mixin item-action {
     cursor: pointer;
-    font-size: 1.1rem;
-    border: 1px solid #ff7f00;
-    background-color: $clr1;
+    font-size: 5px;
+    border: 0;
+    background-color: transparent;
     border-radius: 8px;
     padding: 2px;
     text-align: center;
     width: 24px;
-    transition: filter .2s ease-in-out;
+    color: $clr2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
 
     &:hover {
+        color: $clr1;
         filter: brightness(80%);
+    }
+
+    &.hovered {
+        opacity: 1;
+        height: 28px;
     }
 }
 
@@ -19,56 +32,111 @@
     border-radius: 5px;
     padding: 4px;
     background-color: $clr1;
+    height: 28px;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        height: 60px;
+    }
 
     .item-actions {
         gap: 2px;
-    }
+        width: 100%;
 
-    .decrease-quantity {
-        @include item-action;
-
-        // &::before {
-        //     font-family: icomoon;
-        //     content: '\E90B';
-
-        // }
-    }
-
-    .increase-quantity {
-        @include item-action;
-
-        // &::before {
-        //     font-family: icomoon;
-        //     content: '\E901';
-        //     text-align: center;
-        // }
-    }
-
-    .delete-item {
-        @include item-action;
-
-        
-        // &::before {
-            //     font-family: icomoon;
-            //     content: '\E972';
-            //     text-align: center;
-            // }
-        }
-        
-    .add-item-to-shopping-list {
-        @include item-action;
-        
-        // &::before {
-            //     font-family: icomoon;
-            //     content: '\E92C';
-            //     text-align: center;
-            // }
+        .actions {
+            .item-quantity {
+                margin-inline: 3px;
+                font-size: .8rem;
+            }
         }
     }
-    .material-symbols-outlined {
-        font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 48
+
+    .item-expiry {
+        transition: all .5s ease-in-out;
+
+        .add-item-to-shopping-list {
+            @include item-action;
+            color: rgb(41, 131, 41);
+            height: 0;
+            opacity: 0;
+            margin-block-start: -6px;
+            margin-inline-end: 2px;
+            overflow: hidden;
+            transition: all .5s ease-in-out;
+
+            &.hovered {
+                // display: block;
+                opacity: 1;
+                height: 30px;
+            }
+
+        }
+
+        .expiry {
+            // display: none;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all .5s ease-in-out;
+
+            &.hovered {
+                // display: block;
+                opacity: 0.6;
+                height: 28px;
+            }
+        }
+    
+}
+
+.decrease-quantity {
+
+    @include item-action;
+
+    // &::before {
+    //     font-family: icomoon;
+    //     content: '\E90B';
+
+    // }
+}
+
+.increase-quantity {
+    @include item-action;
+
+    margin-inline-end: -22px;
+    overflow: hidden;
+
+    &.hovered {
+        margin-inline-end: 0px;
     }
+}
+
+.delete-item {
+    @include item-action;
+    // color: rgb(253, 125, 125);
+    color: rgb(252, 46, 46);
+    margin-inline-start: -20px;
+    overflow: hidden;
+
+    &.hovered {
+        margin-inline-start: 0px;
+    }
+
+
+    // &::before {
+    //     font-family: icomoon;
+    //     content: '\E972';
+    //     text-align: center;
+    // }
+}
+
+
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
